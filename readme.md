@@ -1,54 +1,80 @@
-# Web Service Engineering -- Praktikum 6
+# 🧩 RESTful API Best Practices — Express.js  
+> Web Service Engineering — Praktikum 6  
 
-RESTful API Best Practices (Express.js)
+[![Node.js](https://img.shields.io/badge/Node.js-v18+-green?logo=node.js)](https://nodejs.org)  
+[![Express.js](https://img.shields.io/badge/Express.js-Framework-blue?logo=express)](https://expressjs.com)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
+[![Status](https://img.shields.io/badge/Status-Finished-success)]()  
+[![Made by](https://img.shields.io/badge/Made%20by-Muhammad%20Raihan%20Azmi-blueviolet)]()  
 
-Mahasiswa: Muhammad Raihan Azmi\
-NIM: 230104040079\
-Kelas: TI23B\
-Tanggal Praktikum: 03-11-2025
+---
 
-## 1. Tujuan Praktikum
+## 📚 Daftar Isi
+1. [🎯 Tujuan Praktikum](#-1-tujuan-praktikum)  
+2. [⚙️ Tools & Teknologi](#️-2-tools--teknologi)  
+3. [🧱 Arsitektur Singkat](#-3-arsitektur-singkat)  
+4. [📂 Struktur Folder](#-4-struktur-folder)  
+5. [🌐 Tabel Endpoint RESTful API](#-5-tabel-endpoint-restful-api)  
+6. [🧩 Middleware](#-6-middleware)  
+7. [🧪 Hasil Uji API](#-7-hasil-uji-api)  
+8. [💡 Penjelasan Singkat](#-8-penjelasan-singkat)  
+9. [🧭 Kesimpulan](#-9-kesimpulan)  
+10. [✅ Checklist Praktikum](#-10-checklist-praktikum)  
+11. [🧑‍💻 Dibuat Oleh](#-dibuat-oleh)  
 
-• Memahami penerapan prinsip RESTful pada Express.\
-• Menggunakan HTTP Method & Status Code yang tepat.\
-• Mengimplementasikan 7 RESTful Principles dalam API.\
-• Menangani validasi input & error secara konsisten.\
-• Menyiapkan dokumentasi API yang mudah diuji.
+---
 
-## 2. Tools & Teknologi
+## 🎯 1. Tujuan Praktikum
 
-• Node.js 18+\
-• Express.js\
-• Nodemon\
-• Postman / Thunder Client\
-• VS Code\
-• Morgan (logging)\
-• Middleware: validateProduct.js, errorHandler.js
+- Memahami penerapan prinsip RESTful pada Express.js  
+- Menggunakan HTTP Method & Status Code yang tepat  
+- Mengimplementasikan 7 RESTful Principles dalam API  
+- Menangani validasi input & error secara konsisten  
+- Menyusun dokumentasi API yang mudah diuji  
 
-## 3. Arsitektur Singkat
+---
 
-• Client (Postman / Thunder Client) → mengirim request HTTP.\
-• API Server (Express) → menerima request dan merespons JSON.\
-• Router (products.routes.js) → berisi endpoint CRUD RESTful.\
-• Controller → logika mengambil, menambah, mengubah, menghapus data.\
-• Middleware Validasi → menolak request yang kurang name atau price.\
-• Middleware Error Handler → menangani error tak terduga (500).\
-• Data Layer (products.data.js) → data sementara berbasis array.\
-• Logging (morgan) → mencatat setiap aktivitas request server.
+## ⚙️ 2. Tools & Teknologi
 
-## 4. Struktur Folder
+| Kebutuhan | Teknologi |
+|------------|------------|
+| Runtime | Node.js 18+ |
+| Framework | Express.js |
+| Logger | Morgan |
+| Hot Reload | Nodemon |
+| Testing | Postman / Thunder Client |
+| Editor | VS Code |
+| Middleware | `validateProduct.js`, `errorHandler.js` |
 
-    src/
-    ├── app.js
-    ├── data/
-    │   └── products.data.js
-    ├── routes/
-    │   └── products.routes.js
-    ├── middlewares/
-    │   ├── validateProduct.js
-    │   └── errorHandler.js
-    └── utils/
-        └── apiResponse.js
+---
+
+## 🧱 3. Arsitektur Singkat
+
+1. **Client** → Postman / Thunder Client mengirim request HTTP  
+2. **API Server (Express)** → menerima request & mengembalikan JSON  
+3. **Router (`products.routes.js`)** → mengatur endpoint CRUD  
+4. **Controller** → mengelola logika bisnis  
+5. **Middleware Validasi** → memastikan input `name` & `price` valid  
+6. **Error Handler** → menangani error 500  
+7. **Data Layer (`products.data.js`)** → menyimpan data sementara  
+8. **Logger (Morgan)** → mencatat semua aktivitas request  
+
+---
+
+## 📂 4. Struktur Folder
+
+src/
+├── app.js
+├── data/
+│   └── products.data.js
+├── routes/
+│   └── products.routes.js
+├── middlewares/
+│   ├── validateProduct.js
+│   └── errorHandler.js
+└── utils/
+    └── apiResponse.js
+
 
 ## 5. Tabel Endpoint RESTful API
 
@@ -62,56 +88,90 @@ Tanggal Praktikum: 03-11-2025
 | DELETE | /api/products/:id     | Hapus produk               | 200 / 404       |
 | GET    | /api/health           | Cek status API             | 200             |
 
-## 6. Middleware
+## 🧩 6. Middleware
 
-### Validasi Product (validateProduct.js)
+Middleware digunakan untuk menjaga **konsistensi, keamanan, dan keandalan** proses request–response pada API.  
+Terdapat dua middleware utama pada proyek ini:
 
-• Mengecek field name dan price\
-• Jika invalid → 400 Bad Request
+---
 
-### Error Handler (errorHandler.js)
+### 🔹 Validasi Produk (`validateProduct.js`)
 
-• Menangkap error tak terduga\
-• Mengembalikan respons standar:
+Berfungsi untuk **memeriksa kelengkapan data produk** sebelum disimpan atau diperbarui.
 
-    {
-      "success": false,
-      "message": "Server error"
-    }
+**Fungsi utama:**
+- Mengecek apakah field `name` dan `price` ada.  
+- Menolak request jika data tidak lengkap atau tidak valid.  
+- Mengembalikan status **400 — Bad Request** dengan pesan error yang jelas.
 
+**Contoh respons ketika data tidak valid:**
+
+{
+  "success": false,
+  "message": "Product name and price are required."
+}
+
+
+🔹 Penanganan Error (errorHandler.js)
+
+Bertanggung jawab untuk menangani error yang tidak terduga (misalnya kesalahan server atau logic).
+
+Fungsi utama:
+
+Menangkap error dari seluruh route.
+
+Menampilkan log error di terminal.
+
+Mengirim respons standar ke client agar format konsisten.
+
+Contoh respons standar error server:
+
+{
+  "success": false,
+  "message": "Server error"
+}
+
+-------
 ## 7. Hasil Uji API
 
-• POST → 201 Created\
-• PUT → 200 OK\
-• PATCH → 200 OK\
-• DELETE → 200 OK\
-• Validasi gagal → 400 Bad Request\
-• Simulasi error → 500 Internal Server Error
+Hasil pengujian menggunakan Postman / Thunder Client menunjukkan bahwa seluruh endpoint berfungsi dengan benar dan memberikan status code yang sesuai.
 
-## 8. Penjelasan Singkat
+| Aksi               | Status Code           | Keterangan                 |
+|--------------------|-----------------------|----------------------------|
+| POST               | 201                   | created                    |
+| PUT                | 200                   | Ok                         |
+| PATCH              | 200                   | Ok                         |
+| DELETE             | 200                   | ok                         |
+| Validasi gagal     | 400                   | Bad Request                |
+| Simulasi error     | 500                   | Internal Server Error      | 
 
-### Apakah sudah menerapkan 7 RESTful Principles?
+-------
+## 8.Penjelasan Singkat
 
-Ya. API telah menerapkan: 1. Stateless\
-2. Client-Server\
-3. Cacheable\
-4. Uniform Interface\
-5. Layered System\
-6. Code on Demand (opsional, dilewati)\
-7. Resource-Based (endpoint menggunakan kata benda)
+## Penerapan 7 RESTful Principles
+
+## API ini telah mengimplementasikan prinsip REST secara penuh:
+1 Stateless – Setiap request tidak bergantung pada state sebelumnya.
+2 Client-Server – Pemisahan tanggung jawab antara client dan server.
+3 Cacheable – Respons dapat di-cache sesuai kebutuhan.
+4 Uniform Interface – Endpoint konsisten dan mudah dipahami.
+5 Layered System – Pemisahan lapisan (router, controller, middleware).
+6 Cde on Demand (opsional) – Tidak digunakan dalam proyek ini.
+7 Resource-Based – Endpoint berbasis kata benda (/products).
 
 ### Kesulitan yang Ditemui
 
-• Route crash/test sempat salah posisi sehingga 404\
-• Validasi input POST/PUT\
-• Penanganan error 500\
-• Konsistensi struktur folder & middleware\
-• Menjaga format respons tetap seragam
+Selama praktikum, beberapa tantangan yang dihadapi antara lain
+• Route crash/test sempat salah posisi → menyebabkan 404 Not Found.
+• Validasi input pada POST dan PUT memerlukan penyesuaian logic.
+• Penanganan error 500 perlu middleware khusus.
+• Menjaga struktur folder & middleware tetap konsisten.
+• Menyatukan format respons agar seragam di seluruh endpoint.
 
 ## 9. Kesimpulan
 
-RESTful API bukan hanya CRUD, tetapi desain API yang rapi, modular,
-aman, dan mudah dipahami oleh client.
+RESTful API bukan hanya sekadar membuat endpoint CRUD, tetapi juga tentang bagaimana membangun desain API yang modular, aman, konsisten, dan mudah dipahami oleh client.
+Dengan prinsip REST yang diterapkan secara menyeluruh, API menjadi lebih reliable, scalable, dan terstandarisasi.
 
 ## 10. Checklist Praktikum
 
