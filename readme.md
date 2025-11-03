@@ -52,25 +52,15 @@ Tanggal Praktikum: 03-11-2025
 
 ## 5. Tabel Endpoint RESTful API
 
-  --------------------------------------------------------------------------
-  Method   Endpoint                   Deskripsi              Status
-  -------- -------------------------- ---------------------- ---------------
-  GET      /api/products              Ambil semua produk     200
-
-  GET      /api/products/:id          Ambil produk by ID     200 / 404
-
-  POST     /api/products              Tambah produk baru     201 / 400
-
-  PUT      /api/products/:id          Update full produk     200 / 400 / 404
-
-  PATCH    /api/products/:id          Update sebagian produk 200 / 404
-
-  DELETE   /api/products/:id          Hapus produk           200 / 404
-
-  GET      /api/health                Cek status API         200
-
-  GET      /api/products/crash/test   Simulasi error 500     500
-  --------------------------------------------------------------------------
+| Method | Endpoint              | Deskripsi                  | Status          |
+|--------|-----------------------|----------------------------|-----------------|
+| GET    | /api/products         | Ambil semua produk         | 200             |
+| GET    | /api/products/:id     | Ambil produk by ID         | 200 / 404       |
+| POST   | /api/products         |  Tambah produk baru        | 201 / 400       |
+| PUT    | /api/products/:id     | Update full produk         | 200 / 400 / 404 |
+| PATCH  | /api/products/:id     | Update sebagian produk     | 200 / 404       |
+| DELETE | /api/products/:id     | Hapus produk               | 200 / 404       |
+| GET    | /api/health           | Cek status API             | 200             |
 
 ## 6. Middleware
 
