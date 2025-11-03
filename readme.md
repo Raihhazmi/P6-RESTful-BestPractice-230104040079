@@ -9,21 +9,6 @@
 
 ---
 
-## 📚 Daftar Isi
-1. [🎯 Tujuan Praktikum](#-1-tujuan-praktikum)  
-2. [⚙️ Tools & Teknologi](#️-2-tools--teknologi)  
-3. [🧱 Arsitektur Singkat](#-3-arsitektur-singkat)  
-4. [📂 Struktur Folder](#-4-struktur-folder)  
-5. [🌐 Tabel Endpoint RESTful API](#-5-tabel-endpoint-restful-api)  
-6. [🧩 Middleware](#-6-middleware)  
-7. [🧪 Hasil Uji API](#-7-hasil-uji-api)  
-8. [💡 Penjelasan Singkat](#-8-penjelasan-singkat)  
-9. [🧭 Kesimpulan](#-9-kesimpulan)  
-10. [✅ Checklist Praktikum](#-10-checklist-praktikum)  
-11. [🧑‍💻 Dibuat Oleh](#-dibuat-oleh)  
-
----
-
 ## 🎯 1. Tujuan Praktikum
 
 - Memahami penerapan prinsip RESTful pada Express.js  
@@ -36,15 +21,48 @@
 
 ## ⚙️ 2. Tools & Teknologi
 
-| Kebutuhan | Teknologi |
-|------------|------------|
-| Runtime | Node.js 18+ |
-| Framework | Express.js |
-| Logger | Morgan |
-| Hot Reload | Nodemon |
-| Testing | Postman / Thunder Client |
-| Editor | VS Code |
-| Middleware | `validateProduct.js`, `errorHandler.js` |
+Proyek ini dibangun menggunakan **ekosistem Node.js modern** dengan kombinasi **framework minimalis**, **middleware kustom**, dan **alat pengembang profesional** untuk menjaga kualitas, kecepatan, serta kestabilan RESTful API.
+
+---
+
+### 🧩 Inti & Framework
+<p align="left">
+  <img src="https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js" alt="Node.js Badge"/>
+  <img src="https://img.shields.io/badge/Express.js-4.x-000000?style=for-the-badge&logo=express" alt="Express.js Badge"/>
+</p>
+
+> 🔹 **Node.js** – Runtime JavaScript untuk server-side dengan performa tinggi.  
+> 🔹 **Express.js** – Framework minimalis untuk membangun RESTful API yang modular dan efisien.
+
+---
+
+### 🧰 Peralatan Pengembangan & Logging
+<p align="left">
+  <img src="https://img.shields.io/badge/Nodemon-Hot_Reload-31A44D?style=for-the-badge&logo=nodemon" alt="Nodemon Badge"/>
+  <img src="https://img.shields.io/badge/Morgan-HTTP_Logger-F48024?style=for-the-badge" alt="Morgan Badge"/>
+  <img src="https://img.shields.io/badge/VS_Code-Editor-007ACC?style=for-the-badge&logo=visualstudiocode" alt="VS Code Badge"/>
+</p>
+
+> 🛠️ **Nodemon** – Menyegarkan server otomatis setiap ada perubahan kode.  
+> 📜 **Morgan** – Mencatat setiap permintaan HTTP secara detail ke terminal.  
+> 💻 **VS Code** – Editor kode andalan dengan dukungan linting, auto-complete, dan integrasi Git.
+
+---
+
+### 🧪 Pengujian API & Middleware Kustom
+<p align="left">
+  <img src="https://img.shields.io/badge/Postman-API_Testing-FF6C37?style=for-the-badge&logo=postman" alt="Postman Badge"/>
+</p>
+
+> 🧠 **Postman / Thunder Client** – Digunakan untuk menguji endpoint API, memeriksa validasi, serta simulasi respons server.
+
+#### ⚡ Middleware Inti
+- 🧾 **`validateProduct.js`** — Melakukan validasi field seperti `name` dan `price` sebelum data disimpan.  
+- 🧯 **`errorHandler.js`** — Menangani error secara global dan mengembalikan struktur respons yang seragam.
+
+---
+
+> 💡 *Dengan kombinasi alat-alat ini, proyek RESTful API menjadi lebih efisien, mudah diuji, dan siap dikembangkan lebih lanjut dalam skala produksi.*
 
 ---
 
@@ -63,6 +81,7 @@
 
 ## 📂 4. Struktur Folder
 
+```bash
 src/
 ├── app.js
 ├── data/
@@ -74,9 +93,10 @@ src/
 │   └── errorHandler.js
 └── utils/
     └── apiResponse.js
+```
+---
 
-
-## 5. Tabel Endpoint RESTful API
+## 5.tabel endpoint restful api
 
 | Method | Endpoint              | Deskripsi                  | Status          |
 |--------|-----------------------|----------------------------|-----------------|
@@ -88,6 +108,7 @@ src/
 | DELETE | /api/products/:id     | Hapus produk               | 200 / 404       |
 | GET    | /api/health           | Cek status API             | 200             |
 
+---
 ## 🧩 6. Middleware
 
 Middleware digunakan untuk menjaga **konsistensi, keamanan, dan keandalan** proses request–response pada API.  
@@ -105,12 +126,12 @@ Berfungsi untuk **memeriksa kelengkapan data produk** sebelum disimpan atau dipe
 - Mengembalikan status **400 — Bad Request** dengan pesan error yang jelas.
 
 **Contoh respons ketika data tidak valid:**
-
+```bash
 {
   "success": false,
   "message": "Product name and price are required."
 }
-
+```
 
 🔹 Penanganan Error (errorHandler.js)
 
@@ -118,19 +139,17 @@ Bertanggung jawab untuk menangani error yang tidak terduga (misalnya kesalahan s
 
 Fungsi utama:
 
-Menangkap error dari seluruh route.
-
-Menampilkan log error di terminal.
-
-Mengirim respons standar ke client agar format konsisten.
+- Menangkap error dari seluruh route.
+- Menampilkan log error di terminal.
+- Mengirim respons standar ke client agar format konsisten.
 
 Contoh respons standar error server:
-
+```bash
 {
   "success": false,
   "message": "Server error"
 }
-
+```
 -------
 ## 7. Hasil Uji API
 
@@ -148,18 +167,17 @@ Hasil pengujian menggunakan Postman / Thunder Client menunjukkan bahwa seluruh e
 -------
 ## 8.Penjelasan Singkat
 
-## Penerapan 7 RESTful Principles
+Penerapan 7 RESTful Principles
+API ini telah mengimplementasikan prinsip REST secara penuh:
+1. Stateless – Setiap request tidak bergantung pada state sebelumnya.
+2. Client-Server – Pemisahan tanggung jawab antara client dan server.
+3. Cacheable – Respons dapat di-cache sesuai kebutuhan.
+4. Uniform Interface – Endpoint konsisten dan mudah dipahami.
+5. Layered System – Pemisahan lapisan (router, controller, middleware).
+6. Cde on Demand (opsional) – Tidak digunakan dalam proyek ini.
+7. Resource-Based – Endpoint berbasis kata benda (/products).
 
-## API ini telah mengimplementasikan prinsip REST secara penuh:
-1 Stateless – Setiap request tidak bergantung pada state sebelumnya.
-2 Client-Server – Pemisahan tanggung jawab antara client dan server.
-3 Cacheable – Respons dapat di-cache sesuai kebutuhan.
-4 Uniform Interface – Endpoint konsisten dan mudah dipahami.
-5 Layered System – Pemisahan lapisan (router, controller, middleware).
-6 Cde on Demand (opsional) – Tidak digunakan dalam proyek ini.
-7 Resource-Based – Endpoint berbasis kata benda (/products).
-
-### Kesulitan yang Ditemui
+## Kesulitan yang Ditemui
 
 Selama praktikum, beberapa tantangan yang dihadapi antara lain
 • Route crash/test sempat salah posisi → menyebabkan 404 Not Found.
