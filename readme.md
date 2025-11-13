@@ -102,7 +102,7 @@ src/
 |--------|-----------------------|----------------------------|-----------------|
 | GET    | /api/products         | Ambil semua produk         | 200             |
 | GET    | /api/products/:id     | Ambil produk by ID         | 200 / 404       |
-| POST   | /api/products         |  Tambah produk baru        | 201 / 400       |
+| POST   | /api/products         | Tambah produk baru         | 201 / 400       |
 | PUT    | /api/products/:id     | Update full produk         | 200 / 400 / 404 |
 | PATCH  | /api/products/:id     | Update sebagian produk     | 200 / 404       |
 | DELETE | /api/products/:id     | Hapus produk               | 200 / 404       |
@@ -110,10 +110,23 @@ src/
 
 ---
 ## 🧩 6.ScreenShoots
-| GET | /api/products           | Ambil semua produk      | 200         |
-|-----|----------------------|----------------------------|-------------|
-| ! [Ambil semua produk] ()  |
-| GET | /api/products/:id       | Ambil produk by ID      | 200 /404        |
+
+| GET products Ambil semua produk   |
+|-------------------------------------------------------------------|
+| ![Ambil semua produk](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/Get%20All%20L3.png) |
+|  GET Ambil produk  By ID |
+| ![Ambil produk by ID](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/GET%20BY%20ID%20L3.png) |
+|  Tambah produk baru |
+| ![Tambah produk baru](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/POST%20NEW%20PRODUCT%20L3.png) |
+|  Update full produk |
+| ![Update full produk](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/PUT%20UPDATE%20PRODUCTS%20L3.png) |
+|  Update sebagian produk |
+| ![Update sebagian produk](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/PATCH%20UPDATE%20PRODUCTS%20SEBAGIAN%20L3.png) |
+|  Hapus produk  |
+| ![Hapus produk ](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/DELLETE%20ID%201.png) |
+|  Cek status API  |
+| ![Cek status API ](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/GET%20HEALTH%20L6.png) |
+
 ---
 ## 🧩 7. Middleware
 
