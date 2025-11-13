@@ -109,7 +109,13 @@ src/
 | GET    | /api/health           | Cek status API             | 200             |
 
 ---
-## 🧩 6. Middleware
+## 🧩 6.ScreenShoots
+| GET | /api/products           | Ambil semua produk      | 200         |
+|-----|----------------------|----------------------------|-------------|
+| ! [Ambil semua produk] ()  |
+| GET | /api/products/:id       | Ambil produk by ID      | 200 /404        |
+---
+## 🧩 7. Middleware
 
 Middleware digunakan untuk menjaga **konsistensi, keamanan, dan keandalan** proses request–response pada API.  
 Terdapat dua middleware utama pada proyek ini:
@@ -151,7 +157,7 @@ Contoh respons standar error server:
 }
 ```
 -------
-## 7. Hasil Uji API
+## 8. Hasil Uji API
 
 Hasil pengujian menggunakan Postman / Thunder Client menunjukkan bahwa seluruh endpoint berfungsi dengan benar dan memberikan status code yang sesuai.
 
@@ -165,7 +171,7 @@ Hasil pengujian menggunakan Postman / Thunder Client menunjukkan bahwa seluruh e
 | Simulasi error     | 500                   | Internal Server Error      | 
 
 -------
-## 8.Penjelasan Singkat
+## 9.Penjelasan Singkat
 
 Penerapan 7 RESTful Principles
 API ini telah mengimplementasikan prinsip REST secara penuh:
@@ -186,12 +192,12 @@ Selama praktikum, beberapa tantangan yang dihadapi antara lain
 • Menjaga struktur folder & middleware tetap konsisten.
 • Menyatukan format respons agar seragam di seluruh endpoint.
 
-## 9. Kesimpulan
+## 10. Kesimpulan
 
 RESTful API bukan hanya sekadar membuat endpoint CRUD, tetapi juga tentang bagaimana membangun desain API yang modular, aman, konsisten, dan mudah dipahami oleh client.
 Dengan prinsip REST yang diterapkan secara menyeluruh, API menjadi lebih reliable, scalable, dan terstandarisasi.
 
-## 10. Checklist Praktikum
+## 11. Checklist Praktikum
 
 ✅ Endpoint CRUD lengkap\
 ✅ PATCH berfungsi\
