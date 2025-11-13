@@ -109,24 +109,22 @@ src/
 | GET    | /api/health           | Cek status API             | 200             |
 
 ---
-## 🧩 6.ScreenShoots
+## 🧩 6. Screenshots
 
-| GET products Ambil semua produk   |
-|-------------------------------------------------------------------|
-| ![Ambil semua produk](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/Get%20All%20L3.png) |
-|  GET Ambil produk  By ID |
-| ![Ambil produk by ID](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/GET%20BY%20ID%20L3.png) |
-|  Tambah produk baru |
-| ![Tambah produk baru](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/POST%20NEW%20PRODUCT%20L3.png) |
-|  Update full produk |
-| ![Update full produk](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/PUT%20UPDATE%20PRODUCTS%20L3.png) |
-|  Update sebagian produk |
-| ![Update sebagian produk](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/PATCH%20UPDATE%20PRODUCTS%20SEBAGIAN%20L3.png) |
-|  Hapus produk  |
-| ![Hapus produk ](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/DELLETE%20ID%201.png) |
-|  Cek status API  |
-| ![Cek status API ](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/GET%20HEALTH%20L6.png) |
+<details>
+<summary>📸 Klik untuk melihat hasil uji API</summary>
 
+| Aksi                         | Gambar                                                                 |
+|------------------------------|------------------------------------------------------------------------|
+| 🟢 GET — Ambil semua produk  | ![GET All](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/Get%20All%20L3.png) |
+| 🟢 GET — Ambil produk by ID  | ![GET by ID](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/GET%20BY%20ID%20L3.png) |
+| 🟡 POST — Tambah produk baru | ![POST](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/POST%20NEW%20PRODUCT%20L3.png) |
+| 🔵 PUT — Update full produk  | ![PUT](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/PUT%20UPDATE%20PRODUCTS%20L3.png) |
+| 🟣 PATCH — Update sebagian produk | ![PATCH](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/PATCH%20UPDATE%20PRODUCTS%20SEBAGIAN%20L3.png) |
+| 🔴 DELETE — Hapus produk     | ![DELETE](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/DELLETE%20ID%201.png) |
+| ⚙️ GET — Cek status API      | ![HEALTH](https://github.com/Raihhazmi/P6-RESTful-BestPractice-230104040079/blob/main/ScreenShots/GET%20HEALTH%20L6.png) |
+
+</details>
 ---
 ## 🧩 7. Middleware
 
